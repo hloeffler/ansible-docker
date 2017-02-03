@@ -1,0 +1,9 @@
+---
+
+- name: test play 1
+  hosts: localhost
+  
+  tasks:
+    - name: test task 1
+      debug: msg="Hello {{ 'template' | regex_replace('template','world') }}"
+

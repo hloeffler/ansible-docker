@@ -6,5 +6,11 @@ RUN apt-get update -y && \
 	apt-add-repository ppa:ansible/ansible && \
 	apt-get update -y && \
 	DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
-	ansible
-	vim
+	ansible \
+	vim \
+	git 
+
+RUN useradd --create-home --shell /bin/bash ansible
+
+USER ansible
+WORKDIR /home/ansible
